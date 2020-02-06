@@ -53,10 +53,11 @@ $(document).ready(function () {
     ConditionalDistanceDropDownDisplay();
 
     /* Add feedback link to job profile thumbs up and down survey */
-    var originUrl = $("#job-profile-feedback-survey").attr("href");
-    var url = originUrl + "?url=" + window.location.href;
-    document.getElementById("job-profile-feedback-survey").setAttribute("href",url)
-
+    if (document.getElementById("job-profile-feedback-survey")){
+        var originUrl = $("#job-profile-feedback-survey").attr("href");
+        var url = originUrl + "?url=" + window.location.href;
+        document.getElementById("job-profile-feedback-survey").setAttribute("href",url)
+    }
 });
 
 $.extend($.ui.autocomplete.prototype, {
